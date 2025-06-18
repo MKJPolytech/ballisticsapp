@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <!-- 제목 -->
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ballistics Calculator"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 무기 종류 선택 -->
+    <Spinner
+        android:id="@+id/spinner_weapon_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 탄종 선택 -->
+    <!-- 현재로서는 비활성화-->
+    <Spinner
+        android:id="@+id/spinner_caliber"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 세부탄약 선택 -->
+    <Spinner
+        android:id="@+id/spinner_ammo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:id="@+id/edit_custom_mass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="질량 입력 (예: 3.56)"
+        android:inputType="numberDecimal"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/edit_custom_mass_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="g / gr"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp" />
+
+    <!-- 속도 입력 -->
+    <EditText
+        android:id="@+id/edit_velocity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="탄속 (예: 940 m/s)"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 발사각 입력 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/edit_angle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="발사각도"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:id="@+id/label_angle_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="°"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:paddingStart="8dp"/>
+
+    </LinearLayout>
+
+    <!-- 거리 입력 (선택) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/edit_distance"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="거리 입력"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:id="@+id/label_distance_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="m"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:paddingStart="8dp"/>
+    </LinearLayout>
+
+    <!-- 질량 정보 출력용 TextView -->
+    <TextView
+        android:id="@+id/text_mass_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 단위 전환 버튼 -->
+    <Button
+        android:id="@+id/btn_unit_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="단위 전환: m/s ↔ fps"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 고급 설정 버튼 -->
+    <Button
+        android:id="@+id/btn_advanced"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚙ 고급 설정"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 계산 버튼 -->
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="계산하기"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 결과 출력 -->
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:visibility="gone" />
+
+</LinearLayout>
