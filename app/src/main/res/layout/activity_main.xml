@@ -43,31 +43,54 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp" />
 
-    <EditText
-        android:id="@+id/edit_custom_mass"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="질량 입력 (예: 3.56)"
-        android:inputType="numberDecimal"
-        android:visibility="gone"
-        android:layout_marginTop="8dp"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp">
 
-    <TextView
-        android:id="@+id/edit_custom_mass_unit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="g / gr"
-        android:visibility="gone"
-        android:layout_marginBottom="8dp" />
+        <EditText
+            android:id="@+id/edit_custom_mass"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="질량"
+            android:inputType="numberDecimal"
+            android:visibility="gone" />
 
+        <TextView
+            android:id="@+id/edit_custom_mass_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="g"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:paddingStart="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
     <!-- 속도 입력 -->
-    <EditText
-        android:id="@+id/edit_velocity"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="탄속 (예: 940 m/s)"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="10dp" />
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edit_velocity"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="속도 입력" />
+
+        <TextView
+            android:id="@+id/label_velocity_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="m/s"
+            android:textColor="#000000"
+            android:layout_marginStart="4dp"/>
+
+    </LinearLayout>
 
     <!-- 발사각 입력 -->
     <LinearLayout
